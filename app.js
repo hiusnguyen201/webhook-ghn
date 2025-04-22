@@ -19,7 +19,9 @@ app.use(cookieParser());
 // app.use(express.static(path.join(__dirname, "public")));
 
 app.get('/ping', (req, res, next) => {
-  res.send('PING!! Hello World!');
+  res.status(200).json({
+    message: 'PING!! Hello World!',
+  });
 });
 
 app.post('/ghn/webhook/status', (req, res, next) => {
